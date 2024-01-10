@@ -170,7 +170,7 @@
 		<!-- To change default color completely you should do that also for tag="place" value="island" and tag="natural" value="land" (search this file) -->
 		<case noPolygons="true" attrColorValue="#00ebe7e4"/>
 		<case attrColorValue="#ebe7e4">
-			<apply_if nightMode="true" attrColorValue="#121926"/>
+			<apply_if nightMode="true" attrColorValue="#000000"/>
 		</case>
 	</renderingAttribute>
 

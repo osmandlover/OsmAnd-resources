@@ -831,13 +831,17 @@
                     </apply>
                     <apply textColor="#c3e8c3" textHaloColor="#77000000" />
                 </switch>
-            </switch><case minzoom="15" tag="highway" value="motorway_junction" textColor="#dcdcff" textHaloColor="#77050547" textHaloRadius="1" textWrapWidth="16" textMinDistance="10" textOrder="46">
+            </switch>
+            <case minzoom="15" tag="highway" value="motorway_junction" textColor="#dcdcff" textHaloColor="#77050547" textHaloRadius="1" textWrapWidth="16" textMinDistance="10" textOrder="46">
                 <case baseAppMode="car">
                     <case maxzoom="13" textSize="12" nameTag="ref" />
                     <case minzoom="14" textSize="13" nameTag="" nameTag2="ref" />
                 </case>
                 <case minzoom="16" textSize="12" nameTag="" nameTag2="ref" />
-            </case><case minzoom="16" tag="natural" value="beach" nameTag="" textSize="12" textColor="#eec590" textHaloColor="#88222222" textWrapWidth="20" textOrder="155" />><switch textColor="#ffcc9b" textHaloColor="#774d2803" textWrapWidth="25" textHaloRadius="2">
+            </case>
+            <case minzoom="16" tag="natural" value="beach" nameTag="" textSize="12" textColor="#eec590" textHaloColor="#88222222" textWrapWidth="20" textOrder="155" />
+>
+            <switch textColor="#ffcc9b" textHaloColor="#774d2803" textWrapWidth="25" textHaloRadius="2">
                 <switch minzoom="13" tag="natural" value="peak" textItalic="true" textOrder="80">
                     <case maxzoom="13" nameTag="ele" textSize="11" />
                     <case maxzoom="14" nameTag="" nameTag2="ele" textSize="12" />
@@ -850,13 +854,16 @@
                 <case minzoom="16" tag="natural" value="cave_entrance" textSize="12" textOrder="236" />
                 <case minzoom="13" tag="natural" value="volcano" textSize="14" textOrder="79" />
                 <apply_if engine_v1="true" textDy="7" />
-            </switch><switch minzoom="3" nameTag="" textColor="#ffb9fe" textHaloColor="#77333333">
+            </switch>
+            <switch minzoom="3" nameTag="" textColor="#ffb9fe" textHaloColor="#77333333">
                 <case tag="natural" value="coastline" />
                 <case tag="natural" value="land" />
-            </switch><switch minzoom="14" textSize="12" textColor="#d4d4ff" textHaloColor="#aa2f4371" textHaloRadius="2" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
+            </switch>
+            <switch minzoom="14" textSize="12" textColor="#d4d4ff" textHaloColor="#aa2f4371" textHaloRadius="2" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
                 <case tag="landuse" value="industrial" />
                 <case tag="landuse" value="wastewater_plant" />
-            </switch><switch minzoom="14" textSize="12" textColor="#c3e8c3" textHaloColor="#77000000" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
+            </switch>
+            <switch minzoom="14" textSize="12" textColor="#c3e8c3" textHaloColor="#77000000" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
                 <case tag="landuse" value="cemetery" />
                 <case tag="landuse" value="graveyard" />
                 <case tag="landuse" value="forest" />
@@ -865,15 +872,19 @@
                 <case tag="natural" value="wetland" />
                 <case tag="landuse" value="allotments" />
                 <case tag="landuse" value="residential" />
-            </switch><switch minzoom="14" textSize="12" nameTag="" textColor="#ffd3dc" textHaloRadius="2" textHaloColor="#77724456" textWrapWidth="20" textItalic="true" textOrder="146">
+            </switch>
+            <switch minzoom="14" textSize="12" nameTag="" textColor="#ffd3dc" textHaloRadius="2" textHaloColor="#77724456" textWrapWidth="20" textItalic="true" textOrder="146">
                 <case tag="landuse" value="military" />
                 <case tag="military" value="danger_area" />
-            </switch><switch textSize="13" textColor="#ffd1d1" textHaloColor="#88000000" textWrapWidth="25" textOrder="134" nameTag="">
+            </switch>
+            <switch textSize="13" textColor="#ffd1d1" textHaloColor="#88000000" textWrapWidth="25" textOrder="134" nameTag="">
                 <case minzoom="16" tag="amenity" value="place_of_worship" />
                 <case minzoom="14" tag="amenity" value="monastery" />
                 <case minzoom="14" tag="historic" value="monastery" />
                 <apply_if engine_v1="true" textDy="7" />
-            </switch><case minzoom="1" maxzoom="2" tag="place" value="continent" nameTag="" textSize="13" textColor="#ffffff" textHaloColor="$placeCountryTextHaloColor" textHaloRadius="3" textBold="true" textWrapWidth="15" textOrder="1" /><case minzoom="3" tag="place" value="country" nameTag="" textColor="#ffffff" textHaloColor="$placeCountryTextHaloColor" textHaloRadius="3" textWrapWidth="15" textOrder="5">
+            </switch>
+            <case minzoom="1" maxzoom="2" tag="place" value="continent" nameTag="" textSize="13" textColor="#ffffff" textHaloColor="$placeCountryTextHaloColor" textHaloRadius="3" textBold="true" textWrapWidth="15" textOrder="1" />
+            <case minzoom="3" tag="place" value="country" nameTag="" textColor="#ffffff" textHaloColor="$placeCountryTextHaloColor" textHaloRadius="3" textWrapWidth="15" textOrder="5">
                 <case maxzoom="3" textSize="12" />
                 <case maxzoom="4" textSize="14" textBold="true" />
                 <case maxzoom="5" textSize="16" textBold="true" />
@@ -909,7 +920,8 @@
                     <case additional="population_rounded=200" textOrder="42" />
                     <case additional="population_rounded=100" textOrder="43" />
                 </apply_if>
-            </case><switch minzoom="5" textSize="13" textColor="#9d6c9d" textWrapWidth="20" textHaloRadius="2" textHaloColor="#ccffffff">
+            </case>
+            <switch minzoom="5" textSize="13" textColor="#9d6c9d" textWrapWidth="20" textHaloRadius="2" textHaloColor="#ccffffff">
                 <switch engine_v1="true">
                     <case maxzoom="10" tag="place" value="state">
                         <case maxzoom="5" nameTag="" textOrder="24" />
@@ -940,7 +952,8 @@
                 </switch>
                 <case minzoom="9" maxzoom="12" tag="place" value="county" nameTag="" textSize="13" textItalic="true" textOrder="63" />
                 <apply textItalic="true" textHaloRadius="2" textColor="#d99b42" textHaloColor="#8873552a" />
-            </switch><switch minzoom="3" textColor="#000000" textWrapWidth="20" textHaloColor="#eeffffff" textHaloRadius="3" textBold="true" textOrder="32" textDy="-4">
+            </switch>
+            <switch minzoom="3" textColor="#000000" textWrapWidth="20" textHaloColor="#eeffffff" textHaloRadius="3" textBold="true" textOrder="32" textDy="-4">
                 <case minzoom="5" tag="place" value="city" nameTag="">
                     <case minzoom="6" maxzoom="7" textSize="17" />
                     <case minzoom="8" textSize="20" />
@@ -1076,7 +1089,8 @@
                     </apply>
                 </switch>
                 <apply textColor="#dddddd" textHaloRadius="2" textHaloColor="#77444444" />
-            </switch><switch textColor="#ffffff" textHaloRadius="2" textHaloColor="#77777777" textWrapWidth="20" intersectionMargin="15">
+            </switch>
+            <switch textColor="#ffffff" textHaloRadius="2" textHaloColor="#77777777" textWrapWidth="20" intersectionMargin="15">
                 <case minzoom="13" maxzoom="17" tag="place" value="suburb" nameTag="" textSize="15" textItalic="true" textOrder="37" intersectionMargin="25">
                     <apply_if minzoom="16" textSize="17" />
                 </case>
@@ -1132,7 +1146,8 @@
                     <case additional="population_rounded=200" textOrder="42" />
                     <case additional="population_rounded=100" textOrder="43" />
                 </apply>
-            </switch><switch textSize="12" textColor="#bff8ff" textWrapWidth="20" textHaloColor="#882a3738" textHaloRadius="2" textOrder="150" nameTag="">
+            </switch>
+            <switch textSize="12" textColor="#bff8ff" textWrapWidth="20" textHaloColor="#882a3738" textHaloRadius="2" textOrder="150" nameTag="">
                 <case minzoom="17" tag="amenity" value="fuel" />
                 <case minzoom="17" tag="amenity" value="parking" />
                 <case minzoom="17" tag="amenity" value="charging_station" />
@@ -1140,7 +1155,9 @@
                 <case minzoom="16" tag="highway" value="services" textDy="4" />
                 <case minzoom="17" tag="junction" value="yes" />
                 <apply_if engine_v1="true" textDy="7" />
-            </switch><switch minzoom="16"><switch>
+            </switch>
+            <switch minzoom="16">
+                <switch>
                     <case tag="military" value="barracks" nameTag="" />
                     <case tag="abandoned:building" value="" nameTag="" />
                     <case tag="disused:building" value="" nameTag="" />
@@ -1152,7 +1169,8 @@
                     <apply_if minzoom="18" textSize="15" />
                     <apply_if engine_v1="true" textDy="7" />
                     <apply textOrder="135" />
-                </switch><switch hideHouseNumbers="false">
+                </switch>
+                <switch hideHouseNumbers="false">
                     <case tag="addr:housenumber" value="" nameTag="" nameTag2="addr:housenumber" />
                     <case tag="addr:housenumber" value="" nameTag="addr:housename" nameTag2="addr:housenumber" />
                     <case tag="addr:housenumber" value="" nameTag="addr:housenumber" />
@@ -1169,7 +1187,8 @@
                         <case minzoom="18" textSize="15" />
                     </apply_if>
                     <apply textOrder="136" />
-                </switch><switch>
+                </switch>
+                <switch>
                     <case minzoom="18" tag="addr:flats" value="" textWrapWidth="20" textOrder="137" textColor="#555555">
                         <case maxzoom="18" nameTag="ref" textSize="12" />
                         <switch minzoom="19" textSize="13">
@@ -1186,7 +1205,10 @@
                         <apply textSize="12" />
                         <apply_if engine_v1="true" textDy="3" />
                     </switch>
-                </switch><apply textColor="#ffffff" textItalic="true" textHaloColor="#77666666" textHaloRadius="2" textWrapWidth="20" textOrder="135" />></switch><switch hideHouseNumbers="false">
+                </switch>
+                <apply textColor="#ffffff" textItalic="true" textHaloColor="#77666666" textHaloRadius="2" textWrapWidth="20" textOrder="135" />
+            </switch>
+            <switch hideHouseNumbers="false">
                 <case minzoom="16" tag="addr:housenumber" value="" nameTag="addr:housenumber" />
                 <case minzoom="16" tag="addr:housenumber" value="" nameTag="" />
                 <apply>
@@ -1197,7 +1219,8 @@
                     <apply_if engine_v1="true" textDy="7" />
                 </apply>
                 <apply textColor="#ffffff" textHaloRadius="2" textHaloColor="#77666666" />
-            </switch><switch>
+            </switch>
+            <switch>
                 <case tag="addr:flats" value="" textOrder="137" textColor="#555555">
                     <case minzoom="18" maxzoom="18" nameTag="ref" textSize="12" />
                     <switch minzoom="19" textSize="13">
@@ -1215,7 +1238,8 @@
                     <apply_if engine_v1="true" textDy="3" />
                 </switch>
                 <apply textColor="#ffffff" textHaloRadius="2" textHaloColor="#77444444" />
-            </switch>  <switch textColor="#d4d4ff" textHaloColor="#aa2f4371" textDy="3" textWrapWidth="25" nameTag="" textHaloRadius="2">
+            </switch>
+            <switch textColor="#d4d4ff" textHaloColor="#aa2f4371" textDy="3" textWrapWidth="25" nameTag="" textHaloRadius="2">
                 <case minzoom="15" tag="railway" value="station" textBold="true" textOrder="70">
                     <apply_if maxzoom="14" textSize="12" />
                     <apply_if minzoom="15" textSize="13" />
@@ -1232,7 +1256,8 @@
                 <case minzoom="16" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textSize="13" textBold="true" textOrder="71" />
                 <case minzoom="17" tag="public_transport" value="platform" nameTag="local_ref" textOnPath="true" textSize="13" textBold="true" textOrder="71" />
                 <case minzoom="15" tag="aerialway" value="station" textSize="13" textOrder="101" />
-            </switch><switch>
+            </switch>
+            <switch>
                 <case minzoom="17" tag="railway" value="subway_entrance" nameTag="" textSize="13" textOrder="75" />
                 <apply textColor="$subwayTextDefaultColor" textWrapWidth="25" textHaloRadius="2" textBold="true" />
                 <apply_if engine_v1="true" textDy="-2" />
@@ -1250,13 +1275,16 @@
                     <case additional="color_gray" textHaloColor="#88484848" />
                     <case additional="color_black" textHaloColor="#88000000" />
                 </apply>
-            </switch><switch minzoom="13" nameTag="" textSize="12" textColor="#ffffff" textHaloColor="#aa444444" textWrapWidth="20" textOrder="144" textHaloRadius="2">
+            </switch>
+            <switch minzoom="13" nameTag="" textSize="12" textColor="#ffffff" textHaloColor="#aa444444" textWrapWidth="20" textOrder="144" textHaloRadius="2">
                 <case tag="landuse" value="residential" />
-            </switch><switch minzoom="17" nameTag="" textSize="12" textColor="#ffcbb2" textHaloColor="#77000000" textDy="7" textWrapWidth="15" textOrder="160" textHaloRadius="2">
+            </switch>
+            <switch minzoom="17" nameTag="" textSize="12" textColor="#ffcbb2" textHaloColor="#77000000" textDy="7" textWrapWidth="15" textOrder="160" textHaloRadius="2">
                 <case tag="shop" value="convenience" />
                 <case tag="shop" value="department_store" />
                 <case tag="shop" value="supermarket" />
-            </switch><switch textColor="#ddf1fd" textHaloColor="#2375aa" textHaloRadius="2">
+            </switch>
+            <switch textColor="#ddf1fd" textHaloColor="#2375aa" textHaloRadius="2">
                 <case minzoom="13" tag="waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="waterway" value="derelict_canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="historic" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
@@ -1275,7 +1303,8 @@
                 <case minzoom="13" tag="old:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="former:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="dismantled:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
-            </switch><switch textColor="#90e4ff" textHaloColor="#aa003153" textHaloRadius="2">
+            </switch>
+            <switch textColor="#90e4ff" textHaloColor="#aa003153" textHaloRadius="2">
                 <case minzoom="2" tag="place" value="ocean" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="3" />
                 <case minzoom="5" tag="place" value="sea" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="33" />
                 <case minzoom="13" tag="natural" value="water" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="178" />
@@ -1295,7 +1324,9 @@
                 <case minzoom="13" tag="landuse" value="basin" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="218" />
                 <case minzoom="17" tag="leisure" value="swimming_pool" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="218" />
                 <case minzoom="14" tag="leisure" value="marina" nameTag="" textSize="12" textItalic="true" textColor="#0000ff" textWrapWidth="30" />
-            </switch><casezz minzoom="3" tag="route" value="ferry" nameTag2="ref" textSize="14" textColor="#ffcdfe" textHaloRadius="2" textHaloColor="#663e203e" textWrapWidth="35" textOnPath="true" textOrder="163" />><switch minzoom="14" tag="aeroway" value="aerodrome" nameTag="" textOrder="65">
+            </switch>
+            <case minzoom="3" tag="route" value="ferry" nameTag2="ref" textSize="14" textColor="#ffcdfe" textHaloRadius="2" textHaloColor="#663e203e" textWrapWidth="35" textOnPath="true" textOrder="163" />
+            <switch minzoom="14" tag="aeroway" value="aerodrome" nameTag="" textOrder="65">
                 <case additional="iata" />
                 <case additional="icao" />
                 <case additional="faa" />
@@ -1303,7 +1334,10 @@
                 <case minzoom="15" />
                 <apply textColor="#c3dbff" textSize="12" textWrapWidth="25" textHaloRadius="2" textHaloColor="#99222222" textDy="9" textOrder="45" />
                 <apply_if minzoom="9" maxzoom="15" additional="abandoned=yes" disable="true" />
-            </switch><case minzoom="15" tag="aeroway" value="taxiway" nameTag="ref" textColor="#ffffff" textHaloColor="#333333" textOnPath="true" textSize="12" textMinDistance="50" textOrder="231" textHaloRadius="2" /><case minzoom="15" tag="aeroway" value="terminal" textSize="12" textColor="#eeeeff" textHaloColor="#222266" textWrapWidth="25" textDy="7" textOrder="66" textHaloRadius="2" /></switch>
+            </switch>
+            <case minzoom="15" tag="aeroway" value="taxiway" nameTag="ref" textColor="#ffffff" textHaloColor="#333333" textOnPath="true" textSize="12" textMinDistance="50" textOrder="231" textHaloRadius="2" />
+            <case minzoom="15" tag="aeroway" value="terminal" textSize="12" textColor="#eeeeff" textHaloColor="#222266" textWrapWidth="25" textDy="7" textOrder="66" textHaloRadius="2" />
+        </switch>
     </text>
     <point>
         <case minzoom="5" tag="osmand" value="file_waypoint">

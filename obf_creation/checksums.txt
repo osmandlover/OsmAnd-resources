@@ -1,0 +1,1 @@
+/home/user/Code/osmandlover/resources/obf_creation/rendering_types.xml 9857ecc8846491ad75be42de40ed8a2c4dd3abe7c7f17f1b2c5cfe597dde22ff

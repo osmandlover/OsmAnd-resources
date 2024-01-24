@@ -25,52 +25,65 @@
     <renderingAttribute name="route">
         <case color="#ccf0b400" strokeWidth="12:8" color_3="#ffde5b" />
     </renderingAttribute>
-    <renderingAttribute name="gpx">
-        <switch>
-            <case currentTrackColor="red" color="#ff0000" />
-            <case currentTrackColor="orange" color="#ff7200" />
-            <case currentTrackColor="yellow" color="#edc300" />
-            <case currentTrackColor="lightgreen" color="#6cb52b" />
-            <case currentTrackColor="green" color="#00842b" />
-            <case currentTrackColor="lightblue" color="#2ec6ff" />
-            <case currentTrackColor="blue" color="#4e4eff" />
-            <case currentTrackColor="purple" color="#a71de1" />
-            <case currentTrackColor="translucent_red" color="#aaff0000" />
-            <case currentTrackColor="translucent_orange" color="#aaff7200" />
-            <case currentTrackColor="translucent_yellow" color="#aaedc300" />
-            <case currentTrackColor="translucent_lightgreen" color="#aa6cb52b" />
-            <case currentTrackColor="translucent_green" color="#aa00842b" />
-            <case currentTrackColor="translucent_lightblue" color="#aa00ffff" />
-            <case currentTrackColor="translucent_blue" color="#aa4e4eff" />
-            <case currentTrackColor="translucent_purple" color="#aaa71de1" />
-            <apply cap="ROUND">
-                <case currentTrackWidth="thin">
-                    <apply_if minzoom="3" maxzoom="5" strokeWidth="1" />
-                    <apply_if minzoom="6" strokeWidth="2" />
-                    <apply_if additional="routePoints=true" pathEffect="5_4" />
-                </case>
-                <case currentTrackWidth="medium">
-                    <apply_if minzoom="3" maxzoom="5" strokeWidth="1" />
-                    <apply_if minzoom="6" maxzoom="11" strokeWidth="3" />
-                    <apply_if minzoom="12" strokeWidth="5" />
-                    <apply_if additional="routePoints=true" pathEffect="8_7" />
-                </case>
-                <case currentTrackWidth="bold">
-                    <apply_if minzoom="3" maxzoom="5" strokeWidth="1" />
-                    <apply_if minzoom="6" maxzoom="7" strokeWidth="3" />
-                    <apply_if minzoom="8" maxzoom="9" strokeWidth="5" />
-                    <apply_if minzoom="10" maxzoom="11" strokeWidth="7" />
-                    <apply_if minzoom="12" strokeWidth="11" />
-                    <apply_if additional="routePoints=true" pathEffect="8_15" />
-                </case>
-                <case>
-                    <apply_if minzoom="3" maxzoom="5" strokeWidth="1" />
-                    <apply_if minzoom="6" strokeWidth="2" />
-                    <apply_if additional="routePoints=true" pathEffect="5_4" />
-                </case>
-            </apply>
-        </switch>
-    </renderingAttribute>
+    
+	<renderingAttribute name="gpx">
+		<switch>
+			<case currentTrackColor="red" color="#ff0000"/>
+			<case currentTrackColor="orange" color="#ff7200"/>
+			<case currentTrackColor="lightblue" color="#2ec6ff"/>
+			<case currentTrackColor="blue" color="#4e4eff"/>
+			<case currentTrackColor="purple" color="#a71de1"/>
+			<case currentTrackColor="pink" color="#f52887"/>
+			<case currentTrackColor="white" color="#ffffff"/>
+			<case currentTrackColor="black" color="#000000"/>
+			<case currentTrackColor="gray" color="#999999"/>
+			<case currentTrackColor="yellow" color="#FBFF00"/>
+			<case currentTrackColor="green" color="#1CC605"/>
+			<case currentTrackColor="translucent_red" color="#aaff0000"/>
+			<case currentTrackColor="translucent_orange" color="#aaff7200"/>
+			<case currentTrackColor="translucent_lightblue" color="#aa00ffff"/>
+			<case currentTrackColor="translucent_blue" color="#aa4e4eff"/>
+			<case currentTrackColor="translucent_purple" color="#aaa71de1"/>
+			<case currentTrackColor="translucent_pink" color="#aaf52887"/>
+			<case currentTrackColor="translucent_white" color="#aaffffff"/>
+			<case currentTrackColor="dark_red" color="#AF0000"/>
+			<case currentTrackColor="dark_green" color="#127E03"/>
+			<case currentTrackColor="dark_yellow" color="#B0B300"/>
+			<case currentTrackColor="dark_blue" color="#2D2D93"/>
+			<case currentTrackColor="dark_pink" color="#A41B5B"/>
+			<case currentTrackColor="dark_cyan" color="#1D7CA0"/>
+			<case currentTrackColor="dark_gray" color="#595959"/>
+			<case color="#ff0000">
+				<apply_if roadStyle="germanRoadAtlas" color="#aa0088"/> <!-- does not works -->
+			</case>
+			<apply cap="ROUND">
+				<case currentTrackWidth="thin">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" strokeWidth="2"/>
+					<apply_if additional="routePoints=true" pathEffect="5_4"/>
+				</case>
+				<case currentTrackWidth="medium">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" maxzoom="11" strokeWidth="3"/>
+					<apply_if minzoom="12" strokeWidth="5"/>
+					<apply_if additional="routePoints=true" pathEffect="8_7"/>
+				</case>
+				<case currentTrackWidth="bold">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" maxzoom="7" strokeWidth="3"/>
+					<apply_if minzoom="8" maxzoom="9" strokeWidth="5"/>
+					<apply_if minzoom="10" maxzoom="11" strokeWidth="7"/>
+					<apply_if minzoom="12" strokeWidth="11"/>
+					<apply_if additional="routePoints=true" pathEffect="8_15"/>
+				</case>
+				<case>
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" strokeWidth="2"/>
+					<apply_if additional="routePoints=true" pathEffect="5_4"/>
+				</case>
+			</apply>
+		</switch>
+	</renderingAttribute>
     <renderingAttribute name="roadDensityZoomTile">
         <case minzoom="15" attrIntValue="4" />
         <case attrIntValue="3" />
@@ -2121,7 +2134,7 @@
             <switch hideFootways="false">
                 <switch>
                     <case minzoom="14" tag="highway" value="track">
-                        <apply pathEffect_5="5_2_2_2">
+                        <apply pathEffect_5="7_1_1_1">
                             <case maxzoom="14" color="#000000" strokeWidth="2" color_5="#252525" strokeWidth_5="2" />
                             <case maxzoom="15" color="#000000" strokeWidth="2.5" color_5="#302C2C" strokeWidth_5="1.7" />
                             <case maxzoom="16" color="#000000" strokeWidth="4.5" color_5="#3E3636" strokeWidth_5="2.5" />
@@ -2129,8 +2142,8 @@
                             <case maxzoom="18" color="#000000" strokeWidth="9" color_5="#5A4A4A" strokeWidth_5="6" />
                             <case minzoom="19" color="#000000" strokeWidth="10.5" color_5="#665555" strokeWidth_5="9" />
                         </apply>
-                        <apply_if additional="foot=yes" color_4="#000000" color_5="#5a6854" pathEffect_5="5_2_2_2" />
-                        <apply_if additional="foot=designated" color_4="#000000" color_5="#5a6854" pathEffect_5="5_2_2_2" />
+                        <apply_if additional="foot=yes" color_4="#000000" color_5="#5a6854" pathEffect_5="7_1_1_1" />
+                        <apply_if additional="foot=designated" color_4="#000000" color_5="#5a6854" pathEffect_5="7_1_1_1" />
                     </case>
                     <switch minzoom="14">
                         <case tag="highway" value="path" pathEffect_5="3_2" />
@@ -2263,8 +2276,7 @@
             </apply>
         </switch>
         <switch>
-            <case tag="waterway" value="canal">
-                <apply color="$navigableWaterColor" cap="ROUND" />
+            <case tag="waterway" value="canal" color="$navigableWaterColor" >
                 <apply>
                     <case maxzoom="9" strokeWidth="2" />
                     <case maxzoom="12" strokeWidth="3" />
@@ -2316,16 +2328,11 @@
                     <case maxzoom="21" strokeWidth_2="30" />
                     <case minzoom="22" strokeWidth_2="32" />
                 </apply_if>
-                <apply_if additional="boat=no" color="$nonNavigableWaterColor">
-                    <case maxzoom="13" strokeWidth="0.8" />
-                    <case maxzoom="14" strokeWidth="1.1" />
-                    <case maxzoom="16" strokeWidth="1.4" />
-                    <case maxzoom="17" strokeWidth="1.7" />
-                    <case minzoom="18" strokeWidth="2.3" />
-                </apply_if>
+                <apply_if additional="boat=no" color="$nonNavigableWaterColor" />
+                <apply_if additional="motorboat=no" color="$nonNavigableWaterColor" />
             </case>
-            <case tag="lock" value="yes" additional="osmand_lock_canal=yes">
-                <apply color="$navigableWaterColor" color_0="#000000" />
+            <case tag="lock" value="yes" additional="osmand_lock_canal=yes" color="$navigableWaterColor" >
+                <apply color_0="#000000" />
                 <apply>
                     <case maxzoom="9" strokeWidth="1" strokeWidth_0="3" />
                     <case maxzoom="12" strokeWidth="1.5" strokeWidth_0="4.5" />
@@ -2336,8 +2343,7 @@
                     <case minzoom="18" strokeWidth="10" strokeWidth_0="30" />
                 </apply>
             </case>
-            <case tag="waterway" value="river">
-                <apply color="$nonNavigableWaterColor" cap="ROUND" />
+            <case tag="waterway" value="river" cap="ROUND" color="$nonNavigableWaterColor">
                 <switch minzoom="11">
                     <case maxzoom="12" strokeWidth="2" />
                     <case maxzoom="13" strokeWidth="3" />
@@ -2350,39 +2356,16 @@
                     <case maxzoom="21" strokeWidth="38" />
                     <case minzoom="22" strokeWidth="30" />
                 </switch>
-                <apply_if additional="boat=yes" color="$navigableWaterColor">
-                    <case maxzoom="9" strokeWidth="2" />
-                    <case maxzoom="12" strokeWidth="3" />
-                    <case maxzoom="13" strokeWidth="5" />
-                    <case maxzoom="14" strokeWidth="7" />
-                    <case maxzoom="16" strokeWidth="10" />
-                    <case maxzoom="17" strokeWidth="12" />
-                    <case maxzoom="18" strokeWidth="20" />
-                    <case maxzoom="19" strokeWidth="24" />
-                    <case maxzoom="20" strokeWidth="28" />
-                    <case maxzoom="21" strokeWidth="30" />
-                    <case minzoom="22" strokeWidth="32" />
-                </apply_if>
-                <apply_if additional="motorboat=no" color="$nonNavigableWaterColor">
-                    <case maxzoom="9" strokeWidth="2" />
-                    <case maxzoom="12" strokeWidth="3" />
-                    <case maxzoom="13" strokeWidth="5" />
-                    <case maxzoom="14" strokeWidth="7" />
-                    <case maxzoom="16" strokeWidth="10" />
-                    <case maxzoom="17" strokeWidth="12" />
-                    <case maxzoom="18" strokeWidth="20" />
-                    <case maxzoom="19" strokeWidth="24" />
-                    <case maxzoom="20" strokeWidth="28" />
-                    <case maxzoom="21" strokeWidth="30" />
-                    <case minzoom="22" strokeWidth="32" />
-                </apply_if>
+                <apply_if additional="boat=yes" color="$navigableWaterColor"/>
+                <apply_if additional="motorboat=yes" color="$navigableWaterColor" />
+                <apply_if additional="motorboat=no" color="$nonNavigableWaterColor" />
             </case>
-            <switch minzoom="15">
+            <switch minzoom="15" color="$nonNavigableWaterColor">
                 <case tag="waterway" value="ditch" />
                 <case tag="waterway" value="drain" />
                 <case tag="waterway" value="stream" />
                 <case tag="waterway" value="wadi" />
-                <apply color="$nonNavigableWaterColor" strokeWidth="2" />
+                <apply strokeWidth="2" />
             </switch>
         </switch>
         <switch hideRailways="false">

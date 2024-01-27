@@ -3659,6 +3659,7 @@
 		<type tag="ruins:waterway" value="canal" minzoom="10"/>
 		<type tag="old:waterway" value="canal" minzoom="10"/>
 		<type tag="former:waterway" value="canal" minzoom="10"/>
+		<type tag="waterway" value="former_canal" minzoom="10"/>
 		<type tag="dismantled:waterway" value="canal" minzoom="10"/>
 
 		<type tag="waterway" value="dam" minzoom="12" propagateToNodes="true" />

@@ -682,6 +682,7 @@
             <case tag="ruins:waterway" value="canal" order="55" />
             <case tag="old:waterway" value="canal" order="55" />
             <case tag="former:waterway" value="canal" order="55" />
+            <case tag="waterway" value="former_canal" order="55" />
             <case tag="dismantled:waterway" value="canal" order="55" />
             <case tag="natural" value="coastline_broken" order="63" />
             <case tag="natural" value="coastline_line" order="63" />
@@ -1315,6 +1316,7 @@
                 <case minzoom="13" tag="ruins:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="old:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="former:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
+                <case minzoom="13" tag="waterway" value="former_canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
                 <case minzoom="13" tag="dismantled:waterway" value="canal" nameTag="" textSize="12" textOnPath="true" textMinDistance="80" textOrder="85" />
             </switch>
             <switch textColor="#90e4ff" textHaloColor="#aa003153" textHaloRadius="2">
@@ -2261,6 +2263,7 @@
             <case tag="ruins:waterway" value="canal" />
             <case tag="old:waterway" value="canal" />
             <case tag="former:waterway" value="canal" />
+            <case tag="waterway" value="former_canal" />
             <case tag="dismantled:waterway" value="canal" />
             <apply color="#5baeae" pathEffect="4_4">
                 <case maxzoom="12" strokeWidth="1" />

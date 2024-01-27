@@ -1,0 +1,828 @@
+<renderingStyle name="black" depends="" defaultColor="#000000" version="1">
+    <renderingProperty attr="moreDetailed" name="More details" description="More details on map" type="boolean" possibleValues="" category="details" />
+    <renderingProperty attr="showSurfaceGrade" name="Road quality" description="Show road quality" type="boolean" possibleValues="" category="details" />
+    <renderingProperty attr="showAccess" name="Show access restrictions" description="Show access restrictions" type="boolean" possibleValues="" category="details" />
+    <renderingProperty attr="noPolygons" name="Hide polygons (exc.buildings)" description="Make all areal land features on map transparent" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideWoodScrubs" name="Hide wood and scrubs" description="Hide wood and scrubs" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideBuildings" name="Hide buildings" description="Hide buildings" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideRoads" name="Hide roads" description="Hide roads" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideRailways" name="Hide railways" description="Hide railways" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideFootways" name="Hide footways" description="Hide footways" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideHistoric" name="Hide historic" description="Hide historic" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="showBoatIcons" name="Show boat icons" description="Show boat icons" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideIcons" name="Hide icons" description="Hide icons" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideNonVehicleHighways" name="Hide non-vehicle highways" description="Hide non-vehicle highways" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideNonBoatWays" name="Hide non-boat ways" description="Hide non-boat ways" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideAccess" name="Hide access restrictions" description="Hide access type" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideText" name="Hide text" description="Hide text" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideHouseNumbers" name="Hide house numbers" description="Hide house numbers" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="hideUnderground" name="Hide underground objects" description="Hide underground objects" type="boolean" possibleValues="" category="hide" />
+    <renderingProperty attr="currentTrackColor" name="Current GPX color" description="Color of the currently recording track" type="string" possibleValues="red,orange,yellow,lightgreen,green,lightblue,blue,purple,translucent_red,translucent_orange,translucent_yellow,translucent_lightgreen,translucent_green,translucent_lightblue,translucent_blue,translucent_purple" defaultValueDescription="default" />
+    <renderingProperty attr="currentTrackWidth" name="Current GPX width" description="Width of the currently recording track" type="string" possibleValues="thin,medium,bold" defaultValueDescription="default" />
+    <renderingProperty attr="appMode" name="Rendering mode" description="Map optimization for respective User Profile" type="string" possibleValues="browse map,car,bicycle,pedestrian" />
+    <renderingProperty attr="baseAppMode" name="Default Rendering mode" description="Map optimization for respective User Profile based on base (parent) profile" type="string" possibleValues="default, car, bicycle, pedestrian, public_transport, boat, ski" />
+    <renderingProperty attr="transportStops" name="Transport stops" description="Public transport stops" type="boolean" possibleValues="" category="transport" />
+    <renderingAttribute name="route">
+        <case color="#ccf0b400" strokeWidth="12:8" color_3="#ffde5b" />
+    </renderingAttribute>
+    
+	<renderingAttribute name="gpx">
+		<switch>
+			<case currentTrackColor="red" color="#ff0000"/>
+			<case currentTrackColor="orange" color="#ff7200"/>
+			<case currentTrackColor="lightblue" color="#2ec6ff"/>
+			<case currentTrackColor="blue" color="#4e4eff"/>
+			<case currentTrackColor="purple" color="#a71de1"/>
+			<case currentTrackColor="pink" color="#f52887"/>
+			<case currentTrackColor="white" color="#ffffff"/>
+			<case currentTrackColor="black" color="#000000"/>
+			<case currentTrackColor="gray" color="#999999"/>
+			<case currentTrackColor="yellow" color="#FBFF00"/>
+			<case currentTrackColor="green" color="#1CC605"/>
+			<case currentTrackColor="translucent_red" color="#aaff0000"/>
+			<case currentTrackColor="translucent_orange" color="#aaff7200"/>
+			<case currentTrackColor="translucent_lightblue" color="#aa00ffff"/>
+			<case currentTrackColor="translucent_blue" color="#aa4e4eff"/>
+			<case currentTrackColor="translucent_purple" color="#aaa71de1"/>
+			<case currentTrackColor="translucent_pink" color="#aaf52887"/>
+			<case currentTrackColor="translucent_white" color="#aaffffff"/>
+			<case currentTrackColor="dark_red" color="#AF0000"/>
+			<case currentTrackColor="dark_green" color="#127E03"/>
+			<case currentTrackColor="dark_yellow" color="#B0B300"/>
+			<case currentTrackColor="dark_blue" color="#2D2D93"/>
+			<case currentTrackColor="dark_pink" color="#A41B5B"/>
+			<case currentTrackColor="dark_cyan" color="#1D7CA0"/>
+			<case currentTrackColor="dark_gray" color="#595959"/>
+			<case color="#ff0000">
+				<apply_if roadStyle="germanRoadAtlas" color="#aa0088"/> <!-- does not works -->
+			</case>
+			<apply cap="ROUND">
+				<case currentTrackWidth="thin">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" strokeWidth="2"/>
+					<apply_if additional="routePoints=true" pathEffect="5_4"/>
+				</case>
+				<case currentTrackWidth="medium">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" maxzoom="11" strokeWidth="3"/>
+					<apply_if minzoom="12" strokeWidth="5"/>
+					<apply_if additional="routePoints=true" pathEffect="8_7"/>
+				</case>
+				<case currentTrackWidth="bold">
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" maxzoom="7" strokeWidth="3"/>
+					<apply_if minzoom="8" maxzoom="9" strokeWidth="5"/>
+					<apply_if minzoom="10" maxzoom="11" strokeWidth="7"/>
+					<apply_if minzoom="12" strokeWidth="11"/>
+					<apply_if additional="routePoints=true" pathEffect="8_15"/>
+				</case>
+				<case>
+					<apply_if minzoom="3" maxzoom="5" strokeWidth="1"/>
+					<apply_if minzoom="6" strokeWidth="2"/>
+					<apply_if additional="routePoints=true" pathEffect="5_4"/>
+				</case>
+			</apply>
+		</switch>
+	</renderingAttribute>
+    <renderingAttribute name="roadDensityZoomTile">
+        <case minzoom="15" attrIntValue="4" />
+        <case attrIntValue="3" />
+    </renderingAttribute>
+    <renderingAttribute name="polygonMinSizeToDisplay">
+        <case moreDetailed="true" attrIntValue="10" />
+        <case attrIntValue="40" />
+    </renderingAttribute>
+    <renderingAttribute name="roadsDensityLimitPerTile">
+        <case attrIntValue="100" />
+    </renderingAttribute>
+    <renderingAttribute name="shadowRendering">
+        <case minzoom="14" attrIntValue="3" shadowColor="#464646" />
+        <case minzoom="9" maxzoom="13" attrIntValue="3" shadowColor="#969696" />
+        <case attrIntValue="0" />
+    </renderingAttribute>
+    <renderingAttribute name="defaultSymbolPathSpacing">
+        <case attrFloatValue="5" />
+    </renderingAttribute>
+    <renderingAttribute name="defaultBlockPathSpacing">
+        <case attrFloatValue="100" />
+    </renderingAttribute>
+    <renderingAttribute name="globalPathPadding">
+        <case attrFloatValue="0" />
+    </renderingAttribute>
+    <renderingAttribute name="rulerCircle">
+        <case color="#999999" strokeWidth="1" shadowRadius="1" shadowColor="#33002a2a" strokeWidth_2="" color_2="#aaaaaa" strokeWidth_3="2" color_3="#33000000" />
+    </renderingAttribute>
+    <renderingAttribute name="rulerCircleAlt">
+        <case color="#333333" strokeWidth="1" shadowRadius="1" shadowColor="#55999999" strokeWidth_2="" color_2="#333333" strokeWidth_3="2" color_3="#99f1eae4" />
+    </renderingAttribute>
+    <renderingAttribute name="rulerLine">
+        <case color="#aaaaaa" strokeWidth="4" pathEffect="4_4" />
+    </renderingAttribute>
+    <renderingAttribute name="motorwayRoadColor">
+        <case attrColorValue="#8d3d4a">
+            <apply_if additional="construction=yes" attrColorValue="#5B0000" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="trunkRoadColor">
+        <case attrColorValue="#7c3b2b">
+            <apply_if additional="construction=yes" attrColorValue="#4E0000" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="primaryRoadColor">
+        <case attrColorValue="#815826">
+            <apply_if additional="construction=yes" attrColorValue="#410000" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingConstant name="primaryRoadAreaNightColor" value="#571300" />
+    <renderingAttribute name="secondaryRoadColor">
+        <case attrColorValue="#6C6716">
+            <apply_if additional="construction=yes" attrColorValue="#410000" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="tertiaryRoadColor">
+        <case attrColorValue="#636363">
+            <apply_if additional="construction=yes" attrColorValue="#4E0C0C" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="residentialRoadColor">
+        <case attrColorValue="#4c4c4c">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingConstant name="residentialRoadLowZoomDayColor" value="#888888" />
+    <renderingConstant name="residentialRoadLowZoomDayColor2" value="#888888" />
+    <renderingConstant name="residentialRoadLowZoomNightColor" value="#888888" />
+    <renderingAttribute name="serviceRoadLowZoomColor">
+        <case attrColorValue="#665555" />
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="serviceRoadColor">
+        <case attrColorValue="#665555">
+            <apply_if additional="construction=yes" attrColorValue="#492B2B" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="buswayRoadColor">
+        <case attrColorValue="#2C687F">
+            <apply_if additional="construction=yes" attrColorValue="#cccccc" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingConstant name="trackDayColor" value="#555555" />
+    <renderingConstant name="trackNightColor" value="#665555" />
+    <renderingAttribute name="mainHighwayOnewayArrowsColor">
+        <case attrColorValue="#ffffff" />
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="trackPathHighwayOnewayArrowsColor">
+        <case attrColorValue="#dddddd">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="nonMotoVehicleRoadColor">
+        <case attrColorValue="#dddddd" />
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingAttribute name="nonMotoVehicleAreaRoadColor">
+        <case attrColorValue="#683500" />
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingConstant name="bridgeDayColor" value="#000000" />
+    <renderingConstant name="bridgeNightColor" value="#cccccc" />
+    <renderingConstant name="tramDayColor" value="#444444" />
+    <renderingConstant name="tramNightColor" value="#999999" />
+    <renderingAttribute name="routeBusColor">
+        <case attrColorValue="#ff0000" />
+        <case hideNonBoatWays="true" attrColorValue="#111111">
+            <apply_if additional="construction=yes" attrColorValue="#3D1D1D" />
+        </case>
+    </renderingAttribute>
+    <renderingConstant name="buildingTextHaloColorDay" value="#aaffffff" />
+    <renderingConstant name="buildingColorDay" value="#bbbbbb" />
+    <renderingConstant name="buildingColorNight" value="#3f3c40" />
+    <renderingConstant name="navigableWaterColor" value="#8fdaff" />
+    <renderingConstant name="nonNavigableWaterColor" value="#26415d" />
+    <renderingConstant name="woodColorDay" value="#9dbf9d" />
+    <renderingConstant name="woodColorNight" value="#1a2116" />
+    <renderingConstant name="parkColor" value="#2b301b" />
+    <renderingConstant name="allotmentsColorDay" value="#bccca3" />
+    <renderingConstant name="allotmentsColorNight" value="#232e14" />
+    <renderingConstant name="parkingColorDay" value="#f6eeb7" />
+    <renderingConstant name="parkingColorNight" value="#888888" />
+    <renderingConstant name="residentialColorDay" value="#dddddd" />
+    <renderingConstant name="residentialColorNight" value="#191919" />
+    <renderingConstant name="industrialColorDay" value="#e6d9e8" />
+    <renderingConstant name="industrialColorNight" value="#2d1c2d" />
+    <renderingConstant name="accessNoColor" value="#c46262" />
+    <renderingConstant name="barrierMinZoom" value="17" />
+    <renderingConstant name="subwayLineDefaultColorDay" value="#7b0000" />
+    <renderingConstant name="subwayLineDefaultColorNight" value="#7b0000" />
+    <renderingConstant name="subwayRedColorDay" value="#ff0000" />
+    <renderingConstant name="subwayBlueColorDay" value="#4e4eff" />
+    <renderingConstant name="subwayPurpleColorDay" value="#a71de1" />
+    <renderingConstant name="subwayLightblueColorNight" value="#7fe5ff" />
+    <renderingConstant name="subwayTextDefaultColor" value="#f7dede" />
+    <renderingConstant name="subwayTextRedColor" value="#ffaaaa" />
+    <renderingConstant name="subwayTextBrownColor" value="#e0c59c" />
+    <renderingConstant name="subwayTextOrangeColor" value="#ffd796" />
+    <renderingConstant name="subwayTextDarkyellowColor" value="#d6d466" />
+    <renderingConstant name="subwayTextYellowColor" value="#fffc79" />
+    <renderingConstant name="subwayTextLightgreenColor" value="#caffa3" />
+    <renderingConstant name="subwayTextGreenColor" value="#25e61e" />
+    <renderingConstant name="subwayTextLightblueColor" value="#7fe5ff" />
+    <renderingConstant name="subwayTextBlueColor" value="#b5beff" />
+    <renderingConstant name="subwayTextPurpleColor" value="#fdc9ff" />
+    <renderingConstant name="subwayTextGrayColor" value="#dddddd" />
+    <renderingConstant name="subwayTextBlackColor" value="#ffffff" />
+    <renderingConstant name="subwayTextDefaultHaloColorNight" value="#667b0000" />
+    <renderingConstant name="whiteColor" value="#88ffffff" />
+    <renderingConstant name="redColor" value="#88ff0000" />
+    <renderingConstant name="orangeColor" value="#88ffb631" />
+    <renderingConstant name="brownColor" value="#88b46100" />
+    <renderingConstant name="darkyellowColor" value="#88737812" />
+    <renderingConstant name="yellowColor" value="#88edc300" />
+    <renderingConstant name="lightgreenColor" value="#8895ff79" />
+    <renderingConstant name="greenColor" value="#8838c012" />
+    <renderingConstant name="lightblueColor" value="#887fe5ff" />
+    <renderingConstant name="blueColor" value="#886d74ff" />
+    <renderingConstant name="purpleColor" value="#88cd5efb" />
+    <renderingConstant name="grayColor" value="#aa999999" />
+    <renderingConstant name="blackColor" value="#aa666666" />
+    <renderingConstant name="routeBusColor" value="#ff0000" />
+    <renderingConstant name="routeShareTaxiColor" value="#f620cb" />
+    <renderingConstant name="routeTrolleybusColor" value="#920071" />
+    <renderingConstant name="routeTramColor" value="#0000ff" />
+    <renderingConstant name="routeTrainColor" value="#cb6e23" />
+    <renderingConstant name="routeLightrailColor" value="#009100" />
+    <renderingConstant name="textHaloRadiusDay" value="2" />
+    <renderingConstant name="textHaloRadiusNight" value="2" />
+    <renderingConstant name="boundaryColorInner" value="#aa72C8E4" />
+    <renderingConstant name="boundaryColorOuter" value="#5072C8E4" />
+    <renderingConstant name="placeCountryTextColor" value="#d99b42" />
+    <renderingConstant name="placeCountryTextHaloColor" value="#27000000" />
+    <renderingAttribute name="debugTextDisplayBBox">
+        <case attrBoolValue="false" />
+    </renderingAttribute>
+    <order>
+        <switch objectType="1" area="false" point="true" order="128">
+            <case tag="" value="" />
+            <case tag="railway" value="" />
+            <case tag="railway" value="station" />
+            <case tag="place" value="" />
+            <case tag="public_transport" value="" />
+            <case tag="ford" value="yes" />
+            <case tag="ford" value="stepping_stones" />
+            <case tag="traffic_calming" value="" />
+            <case tag="noexit" value="" />
+            <case tag="flood_prone" value="" />
+            <case tag="barrier" value="" />
+            <case tag="aeroway" value="" />
+            <case tag="aerialway" value="" />
+            <case tag="aerialway" value="station" />
+            <case tag="amenity" value="ferry_terminal" />
+            <case tag="amenity" value="" />
+            <case tag="amenity" value="parking" />
+            <case tag="emergency" value="" />
+            <case tag="man_made" value="" />
+            <case tag="natural" value="" />
+            <case tag="waterway" value="waterfall" />
+            <case tag="waterway" value="lock_gate" />
+            <case tag="waterway" value="" />
+            <case tag="shop" value="" />
+            <case tag="tourism" value="" />
+            <case tag="historic" value="" />
+            <case tag="leisure" value="" />
+            <case tag="sport" value="" />
+            <case tag="geocache" value="" />
+            <case tag="office" value="" />
+            <case tag="highway" value="steps" />
+            <case tag="osmand" value="file_waypoint" />
+            <apply_if hideUnderground="true">
+                <apply_if layer="-1" order="-1" />
+                <apply_if additional="indoor=yes" order="-1" />
+                <apply_if additional="covered=yes" order="-1" />
+            </apply_if>
+        </switch>
+        <switch objectType="3" area="true" point="false" addPoint="true" order="5">
+            <switch layer="-1" order="3">
+                <case tag="" value="" />
+                <case tag="natural" value="coastline" />
+                <case tag="natural" value="land" />
+                <case tag="place" value="island" />
+                <case tag="place" value="islet" />
+            </switch>
+            <case tag="military" value="danger_area" order="8" />
+            <case tag="railway" value="" order="4" />
+            <case tag="railway" value="station" order="5" />
+            <case tag="public_transport" value="" order="5" ignorePolygonAsPointArea="true" />
+            <case tag="man_made" value="bridge" order="10" />
+            <apply_if hideUnderground="true">
+                <apply_if layer="-1" order="-1" />
+                <apply_if additional="indoor=yes" order="-1" />
+                <apply_if additional="covered=yes" order="-1" />
+            </apply_if>
+        </switch>
+        <switch objectType="3" cycle="true" point="false" addPoint="true" order="5">
+            <case tag="area:highway" value="primary" />
+            <case tag="area:highway" value="secondary" />
+            <case tag="area:highway" value="tertiary" />
+            <case tag="area:highway" value="pedestrian" />
+            <case tag="area:highway" value="service" />
+            <case tag="area:highway" value="road" />
+            <case tag="area:highway" value="unclassified" />
+            <case tag="area:highway" value="service" />
+            <case tag="highway" value="rest_area" />
+            <case tag="area:highway" value="residential" />
+            <case tag="area:highway" value="footway" />
+            <case tag="area:highway" value="track" />
+            <case tag="landuse" value="military" order="8" />
+            <case tag="military" value="danger_area" order="8" />
+            <case tag="amenity" value="parking" />
+            <case tag="railway" value="station" ignorePolygonAsPointArea="true" />
+            <case tag="amenity" value="place_of_worship" ignorePolygonAsPointArea="true" />
+            <case tag="natural" value="wetland" order="6" />
+            <case tag="aerialway" value="station" ignorePolygonAsPointArea="true" />
+            <case tag="public_transport" value="" order="5" ignorePolygonAsPointArea="true" />
+            <case tag="landuse" value="residential" order="4" />
+            <switch order="5">
+                <case tag="natural" value="water" />
+                <case tag="aeroway" value="aerodrome" />
+                <case tag="aeroway" value="apron" />
+                <case tag="aeroway" value="terminal" />
+            </switch>
+            <case tag="building" value="" order="11">
+                <apply_if layer="-1" order="10" />
+                <apply_if layer="1" order="12" />
+                <apply_if layer="2" order="13" />
+                <apply_if layer="3" order="14" />
+            </case>
+            <case tag="building" value="no" order="-1" />
+            <case tag="landuse" value="basin" additional="basin=detention" order="-1" />
+            <case tag="man_made" value="bridge" order="10" />
+            <case tag="waterway" value="dock" />
+            <case tag="aeroway" value="runway" />
+            <case tag="addr:housenumber" value="" ignorePolygonAsPointArea="true" />
+            <case tag="" value="" order="5" />
+            <apply_if hideUnderground="true">
+                <apply_if layer="-1" order="-1" />
+                <apply_if additional="indoor=yes" order="-1" />
+                <apply_if additional="covered=yes" order="-1" />
+            </apply_if>
+        </switch>
+        <switch objectType="2" area="false">
+            <case layer="-1" tag="" value="" order="11" />
+            <case tag="" value="" order="12" />
+            <switch baseAppMode="car">
+                <case layer="1" tag="railway" value="" order="71" />
+                <case tag="railway" value="" order="36" />
+                <switch layer="-1">
+                    <case tag="public_transport" value="platform" order="11" />
+                    <case tag="public_transport" value="station" order="11" />
+                    <case tag="railway" value="platform" order="11" />
+                </switch>
+                <case tag="public_transport" value="" order="36" />
+            </switch>
+            <case tag="railway" value="" order="58">
+                <apply_if layer="-1" order="20" />
+                <apply_if layer="1" order="88" />
+            </case>
+            <case tag="public_transport" value="" order="58" />
+            <case tag="aerialway" value="" order="96" />
+            <case tag="aerialway" value="station" order="96" />
+            <case tag="railway" value="station" />
+            <case layer="1" tag="waterway" value="" order="68" />
+            <switch>
+                <case tag="waterway" value="canal" order="39">
+                    <apply_if layer="1" order="100" />
+                    <apply_if additional="layer=2" order="130" />
+                    <apply_if additional="layer=3" order="160" />
+                    <apply_if layer="-1" order="20" />
+                    <apply_if additional="layer=-2" order="10" />
+                </case>
+                <case tag="waterway" value="lock" order="49">
+                    <apply_if layer="1" order="99" />
+                    <apply_if additional="layer=2" order="129" />
+                    <apply_if additional="layer=3" order="159" />
+                    <apply_if layer="-1" order="19" />
+                    <apply_if additional="layer=-2" order="9" />
+                </case>
+                <case tag="waterway" value="dock" order="48">
+                    <apply_if layer="1" order="98" />
+                    <apply_if additional="layer=2" order="128" />
+                    <apply_if additional="layer=3" order="158" />
+                    <apply_if layer="-1" order="18" />
+                    <apply_if additional="layer=-2" order="8" />
+                </case>
+                <case tag="waterway" value="river" order="20">
+                    <apply_if layer="1" order="30" />
+                    <apply_if additional="layer=2" order="40" />
+                    <apply_if additional="layer=3" order="50" />
+                    <apply_if layer="-1" order="5" />
+                    <apply_if additional="layer=-2" order="3" />
+                </case>
+                <case tag="waterway" value="river" order="21">
+                    <apply_if layer="1" order="31" />
+                    <apply_if additional="layer=2" order="41" />
+                    <apply_if additional="layer=3" order="51" />
+                    <apply_if layer="-1" order="6" />
+                    <apply_if additional="layer=-2" order="4" />
+                </case>
+                <case tag="waterway" value="stream" order="5">
+                    <apply_if layer="1" order="6" />
+                    <apply_if additional="layer=2" order="7" />
+                    <apply_if additional="layer=3" order="8" />
+                    <apply_if layer="-1" order="3" />
+                    <apply_if additional="layer=-2" order="2" />
+                </case>
+                <case tag="waterway" value="ditch" order="4">
+                    <apply_if layer="1" order="5" />
+                    <apply_if additional="layer=2" order="6" />
+                    <apply_if additional="layer=3" order="7" />
+                    <apply_if layer="-1" order="2" />
+                    <apply_if additional="layer=-2" order="1" />
+                </case>
+                <case tag="waterway" value="drain" order="4">
+                    <apply_if layer="1" order="5" />
+                    <apply_if additional="layer=2" order="6" />
+                    <apply_if additional="layer=3" order="7" />
+                    <apply_if layer="-1" order="2" />
+                    <apply_if additional="layer=-2" order="1" />
+                </case>
+                <case tag="waterway" value="wadi" order="4">
+                    <apply_if layer="1" order="5" />
+                    <apply_if additional="layer=2" order="6" />
+                    <apply_if additional="layer=3" order="7" />
+                    <apply_if layer="-1" order="2" />
+                    <apply_if additional="layer=-2" order="1" />
+                </case>
+            </switch>
+            <case tag="admin_level" value="" order="62">
+                <apply_if baseAppMode="pedestrian" order="34" />
+                <apply_if baseAppMode="bicycle" order="34" />
+                <apply_if baseAppMode="car" order="34" />
+            </case>
+            <case tag="administrative" value="" order="62" />
+            <case tag="boundary" value="" order="62" />
+            <switch>
+                <case tag="highway" value="motorway" order="84">
+                    <apply_if layer="1" order="107" />
+                    <apply_if additional="layer=2" order="137" />
+                    <apply_if additional="layer=3" order="165" />
+                    <apply_if layer="-1" order="62" />
+                    <apply_if additional="layer=-2" order="41" />
+                </case>
+                <case tag="highway" value="motorway_link" order="71">
+                    <apply_if layer="1" order="94" />
+                    <apply_if additional="layer=2" order="124" />
+                    <apply_if additional="layer=3" order="152" />
+                    <apply_if layer="-1" order="49" />
+                    <apply_if additional="layer=-2" order="25" />
+                </case>
+                <case tag="highway" value="trunk" order="83">
+                    <apply_if layer="1" order="106" />
+                    <apply_if additional="layer=2" order="136" />
+                    <apply_if additional="layer=3" order="164" />
+                    <apply_if layer="-1" order="61" />
+                    <apply_if additional="layer=-2" order="40" />
+                </case>
+                <case tag="highway" value="trunk_link" order="70">
+                    <apply_if layer="1" order="93" />
+                    <apply_if additional="layer=2" order="123" />
+                    <apply_if additional="layer=3" order="151" />
+                    <apply_if layer="-1" order="48" />
+                    <apply_if additional="layer=-2" order="24" />
+                </case>
+                <case tag="highway" value="primary" order="82">
+                    <apply_if layer="1" order="105" />
+                    <apply_if additional="layer=2" order="135" />
+                    <apply_if additional="layer=3" order="163" />
+                    <apply_if layer="-1" order="60" />
+                    <apply_if additional="layer=-2" order="39" />
+                </case>
+                <case tag="highway" value="primary_link" order="69">
+                    <apply_if layer="1" order="92" />
+                    <apply_if additional="layer=2" order="122" />
+                    <apply_if additional="layer=3" order="150" />
+                    <apply_if layer="-1" order="47" />
+                    <apply_if additional="layer=-2" order="23" />
+                </case>
+                <case tag="highway" value="secondary" order="81">
+                    <apply_if layer="1" order="104" />
+                    <apply_if additional="layer=2" order="134" />
+                    <apply_if additional="layer=3" order="162" />
+                    <apply_if layer="-1" order="59" />
+                    <apply_if additional="layer=-2" order="38" />
+                </case>
+                <case tag="highway" value="secondary_link" order="68">
+                    <apply_if layer="1" order="91" />
+                    <apply_if additional="layer=2" order="121" />
+                    <apply_if additional="layer=3" order="149" />
+                    <apply_if layer="-1" order="46" />
+                    <apply_if additional="layer=-2" order="22" />
+                </case>
+                <case tag="highway" value="tertiary" order="80">
+                    <apply_if layer="1" order="103" />
+                    <apply_if additional="layer=2" order="133" />
+                    <apply_if additional="layer=3" order="161" />
+                    <apply_if layer="-1" order="58" />
+                    <apply_if additional="layer=-2" order="37" />
+                </case>
+                <case tag="highway" value="tertiary_link" order="67">
+                    <apply_if layer="1" order="90" />
+                    <apply_if additional="layer=2" order="120" />
+                    <apply_if additional="layer=3" order="148" />
+                    <apply_if layer="-1" order="45" />
+                    <apply_if additional="layer=-2" order="21" />
+                </case>
+                <case tag="highway" value="road" order="79">
+                    <apply_if layer="1" order="102" />
+                    <apply_if additional="layer=2" order="132" />
+                    <apply_if additional="layer=3" order="160" />
+                    <apply_if layer="-1" order="57" />
+                    <apply_if additional="layer=-2" order="36" />
+                </case>
+                <case tag="highway" value="unclassified" order="79">
+                    <apply_if layer="1" order="102" />
+                    <apply_if additional="layer=2" order="132" />
+                    <apply_if additional="layer=3" order="160" />
+                    <apply_if layer="-1" order="57" />
+                    <apply_if additional="layer=-2" order="36" />
+                </case>
+                <case tag="highway" value="residential" order="78">
+                    <apply_if layer="1" order="101" />
+                    <apply_if additional="layer=2" order="131" />
+                    <apply_if additional="layer=3" order="159" />
+                    <apply_if layer="-1" order="56" />
+                    <apply_if additional="layer=-2" order="35" />
+                </case>
+                <case tag="highway" value="service" order="51">
+                    <apply_if layer="1" order="101" />
+                    <apply_if additional="layer=2" order="131" />
+                    <apply_if additional="layer=3" order="159" />
+                    <apply_if layer="-1" order="56" />
+                    <apply_if additional="layer=-2" order="35" />
+                    <apply_if moreDetailed="false" minzoom="11">
+                        <case maxzoom="13" order="-1" />
+                        <case additional="service=driveway" maxzoom="14" order="-1" />
+                        <case additional="service=parking_aisle" maxzoom="14" order="-1" />
+                        <case additional="service=alley" maxzoom="14" order="-1" />
+                    </apply_if>
+                </case>
+                <case tag="highway" value="busway" order="52">
+                    <apply_if layer="1" order="100" />
+                    <apply_if additional="layer=2" order="130" />
+                    <apply_if additional="layer=3" order="158" />
+                    <apply_if layer="-1" order="55" />
+                    <apply_if additional="layer=-2" order="34" />
+                </case>
+                <case tag="highway" value="living_street" order="77">
+                    <apply_if layer="1" order="100" />
+                    <apply_if additional="layer=2" order="130" />
+                    <apply_if additional="layer=3" order="158" />
+                    <apply_if layer="-1" order="55" />
+                    <apply_if additional="layer=-2" order="34" />
+                </case>
+                <case tag="highway" value="pedestrian" order="76">
+                    <apply_if baseAppMode="pedestrian" order="82" />
+                    <apply_if layer="1" order="99" />
+                    <apply_if additional="layer=2" order="129" />
+                    <apply_if additional="layer=3" order="157" />
+                    <apply_if layer="-1" order="54" />
+                    <apply_if additional="layer=-2" order="33" />
+                </case>
+            </switch>
+            <case tag="highway" value="track" order="70">
+                <apply_if layer="1" order="89" />
+                <apply_if additional="layer=2" order="119" />
+                <apply_if additional="layer=3" order="147" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="highway" value="path" order="70">
+                <apply_if layer="1" order="110" />
+                <apply_if additional="layer=2" order="140" />
+                <apply_if additional="layer=3" order="166" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="highway" value="footway" order="70">
+                <apply_if layer="1" order="110" />
+                <apply_if additional="layer=2" order="140" />
+                <apply_if additional="layer=3" order="166" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="highway" value="steps" order="70">
+                <apply_if layer="1" order="111" />
+                <apply_if additional="layer=2" order="140" />
+                <apply_if additional="layer=3" order="166" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="highway" value="cycleway" order="70">
+                <apply_if layer="1" order="110" />
+                <apply_if additional="layer=2" order="140" />
+                <apply_if additional="layer=3" order="166" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="highway" value="bridleway" order="70">
+                <apply_if layer="1" order="109" />
+                <apply_if additional="layer=2" order="139" />
+                <apply_if additional="layer=3" order="165" />
+                <apply_if layer="-1" order="20" />
+                <apply_if additional="layer=-2" order="19" />
+            </case>
+            <case tag="waterway" value="derelict_canal" order="55" />
+            <case tag="historic" value="canal" order="55" />
+            <case tag="historic:waterway" value="canal" order="55" />
+            <case tag="disused:waterway" value="canal" order="55" />
+            <case tag="was:waterway" value="canal" order="55" />
+            <case tag="demolished:waterway" value="canal" order="55" />
+            <case tag="razed:waterway" value="canal" order="55" />
+            <case tag="removed:waterway" value="canal" order="55" />
+            <case tag="construction:waterway" value="canal" order="55" />
+            <case tag="proposed:waterway" value="canal" order="55" />
+            <case tag="destroyed:waterway" value="canal" order="55" />
+            <case tag="waterway:historic" value="canal" order="55" />
+            <case tag="waterway:abandoned" value="canal" order="55" />
+            <case tag="ruins:waterway" value="canal" order="55" />
+            <case tag="old:waterway" value="canal" order="55" />
+            <case tag="former:waterway" value="canal" order="55" />
+            <case tag="dismantled:waterway" value="canal" order="55" />
+            <case tag="natural" value="coastline_broken" order="63" />
+            <case tag="natural" value="coastline_line" order="63" />
+            <case tag="route" value="ferry" order="63" />
+            <case tag="aeroway" value="" order="62" />
+            <case tag="aeroway" value="runway" />
+            <case tag="osmand" value="file_trackline" />
+            <case tag="osmand" value="file_routeline" />
+            <apply_if hideUnderground="true">
+                <apply_if layer="-1" order="-1">
+                    <apply_if tag="highway" value="motorway" order="62" />
+                    <apply_if tag="highway" value="motorway_link" order="49" />
+                    <apply_if tag="highway" value="trunk" order="61" />
+                    <apply_if tag="highway" value="trunk_link" order="48" />
+                    <apply_if tag="highway" value="primary" order="60" />
+                    <apply_if tag="highway" value="primary_link" order="47" />
+                    <apply_if tag="highway" value="secondary" order="59" />
+                    <apply_if tag="highway" value="secondary_link" order="46" />
+                    <apply_if tag="highway" value="tertiary" order="58" />
+                    <apply_if tag="highway" value="tertiary_link" order="45" />
+                    <apply_if tag="highway" value="unclassified" order="57" />
+                    <apply_if tag="highway" value="residential" order="57" />
+                    <apply_if tag="highway" value="service" order="56" />
+                    <apply_if tag="highway" value="living_street" order="56" />
+                </apply_if>
+                <apply_if additional="indoor=yes" order="-1" />
+                <apply_if additional="covered=yes" order="-1" />
+            </apply_if>
+        </switch>
+    </order>
+
+	<text>
+	</text>
+
+	<point>
+	</point>
+
+    <polygon>
+        <switch hideBuildings="false">
+            <case minzoom="16" color="$buildingColorNight" tag="building" value="" strokeWidth_2="0.4" color_2="#aaaaaa" />
+            <switch minzoom="16">
+                <case tag="building" value="place_of_worship" />
+                <case tag="building" value="basilica" />
+                <case tag="building" value="bell_tower" />
+                <case tag="building" value="castle_tower" />
+                <apply color="#4b5257" color_2="#d9bd21" strokeWidth_2="1.3" />
+            </switch>
+            <switch moreDetailed="true">
+                <case minzoom="15" maxzoom="15" tag="building" value="" color="$buildingColorNight" />
+            </switch>
+        </switch>
+        <switch>
+            <case minzoom="13" tag="tourism" value="attraction" />
+            <case minzoom="15" tag="amenity" value="place_of_worship" />
+            <case minzoom="13" tag="amenity" value="monastery" />
+            <case minzoom="13" tag="historic" value="monastery" />
+            <apply color="#685d20" color_2="#d9bd21" strokeWidth_2="2" />
+        </switch>
+        <switch noPolygons="false">
+            <switch hideWoodScrubs="false">
+                <switch minzoom="12">
+                    <case tag="natural" value="wood" />
+                    <case tag="landuse" value="forest" />
+                    <case tag="natural" value="scrub" />
+                    <apply color="$woodColorNight" />
+                </switch>
+                <case minzoom="12" tag="natural" value="wetland" color="#0b322d" shader="" />
+                <case minzoom="12" tag="landuse" value="orchard" scolor="#$woodColorNight" shader="" />
+            </switch>
+            <switch>
+                <case minzoom="12" tag="landuse" value="cemetery" color="#39463b" />
+                <case minzoom="12" tag="amenity" value="grave_yard" color="#576b5b" shader="" />
+                <case minzoom="12" tag="natural" value="beach" shader="beach2night" />
+            </switch>
+            <case minzoom="12" tag="leisure" value="park" color="$parkColor" color_2="#617052" strokeWidth_2=":1" />
+            <case minzoom="12" tag="landuse" value="military">
+                <apply_if maxzoom="13" strokeWidth_2="1:1" />
+                <apply_if minzoom="14" strokeWidth_2="1.5:1.5" />
+                <apply color="#44ff0000" color_2="#60ffa0c0" />
+            </case>
+            <case minzoom="12" tag="military" value="danger_area" color="#44ff0000" color_2="#ffa0c0" strokeWidth_2=":3">
+                <apply_if maxzoom="13" strokeWidth_2="1:1" />
+                <apply_if minzoom="14" strokeWidth_2="1.5:1.5" />
+            </case>
+            <case minzoom="12" tag="landuse" value="residential" color="$residentialColorNight" />
+            <case minzoom="12" tag="landuse" value="industrial" color="$industrialColorNight" />
+            <case minzoom="15" tag="amenity" value="parking" color="$parkingColorNight" />
+            <switch>
+                <case minzoom="1" tag="natural" value="coastline" />
+                <case minzoom="4" tag="natural" value="bay" />
+                <case minzoom="7" tag="landuse" value="reservoir" />
+                <case minzoom="11" tag="natural" value="water" />
+                <case minzoom="7" tag="landuse" value="water" />
+                <case minzoom="10" tag="landuse" value="basin" />
+                <case minzoom="15" tag="leisure" value="swimming_pool" color_2="#7479ec" strokeWidth_2=":1" />
+                <apply color="$nonNavigableWaterColor" />
+            </switch>
+            <case minzoom="14" tag="aeroway" value="aerodrome" color="#256b79f1" color_2="#306b79f1">
+                <case maxzoom="12" strokeWidth_2="0" />
+                <case minzoom="13" strokeWidth_2="1" />
+            </case>
+            <switch>
+                <case tag="place" value="island" />
+                <case tag="place" value="islet" />
+                <case tag="natural" value="land" />
+                <apply color="#000000" />
+            </switch>
+        </switch>
+        <switch>
+            <case minzoom="15" tag="area:highway" value="primary" color="$primaryRoadAreaNightColor" />
+        </switch>
+        <switch>
+            <case minzoom="15" tag="area:highway" value="secondary" color="$primaryRoadAreaNightColor" />
+        </switch>
+        <switch>
+            <case minzoom="15" tag="area:highway" value="tertiary" color="$primaryRoadAreaNightColor" />
+        </switch>
+        <switch minzoom="16" color="#000000">
+            <case tag="area:highway" value="road" />
+            <case tag="area:highway" value="unclassified" />
+            <case tag="area:highway" value="residential" />
+            <case tag="man_made" value="bridge" />
+        </switch>
+        <switch minzoom="16">
+            <case tag="area:highway" value="service" />
+            <case tag="highway" value="rest_area" />
+            <apply_if color="#4f2215" />
+        </switch>
+        <switch hideNonVehicleHighways="false" minzoom="16">
+            <case tag="area:highway" value="pedestrian" />
+            <case tag="area:highway" value="footway" />
+            <apply color="$nonMotoVehicleAreaRoadColor" />
+        </switch>
+        <switch minzoom="16">
+            <case tag="area:highway" value="track" color="#2e2e2e" />
+        </switch>
+        <case minzoom="14" tag="aeroway" value="runway" color="#90909e" />
+        <case minzoom="14" tag="aeroway" value="apron" color="#4c3a5d" />
+        <case hideBuildings="false" minzoom="14" tag="aeroway" value="terminal" color="#835286" strokeWidth_2="0.5" color_2="#c98df7" />
+    </polygon>
+
+	<line>
+	</line>
+</renderingStyle>

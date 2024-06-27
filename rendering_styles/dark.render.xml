@@ -865,7 +865,7 @@
                     <case minzoom="17" nameTag="" nameTag2="ele" textSize="16" />
                     <case minzoom="17" nameTag="ele" textSize="16" />
                 </switch>
-                <case minzoom="16" tag="natural" value="cave_entrance" textSize="12" textOrder="236" />
+                <case minzoom="13" tag="natural" value="cave_entrance" textSize="12" textOrder="236" />
                 <case minzoom="13" tag="natural" value="volcano" textSize="14" textOrder="79" />
                 <apply_if engine_v1="true" textDy="7" />
             </switch>
@@ -876,6 +876,7 @@
             <switch minzoom="14" textSize="12" textColor="#d4d4ff" textHaloColor="#aa2f4371" textHaloRadius="2" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
                 <case tag="landuse" value="industrial" />
                 <case tag="landuse" value="wastewater_plant" />
+                <case tag="man_made" value="outfall" />
             </switch>
             <switch minzoom="14" textSize="12" textColor="#c3e8c3" textHaloColor="#77000000" textWrapWidth="20" textItalic="true" textOrder="144" nameTag="">
                 <case tag="landuse" value="cemetery" />
@@ -1620,10 +1621,11 @@
                     <case additional="status=active" icon="natural_volcano_active_big" shield="" />
                 </case>
             </case>
-            <case minzoom="15" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85">
+            <case minzoom="12" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85">
                 <apply shield="gray_round_night_shield" />
             </case>
             <case minzoom="14" tag="natural" value="spring" icon="natural_spring" shield="blue_round_night_shield" />
+            <case minzoom="12" tag="man_made" value="outfall" icon="communication_tower" shield="purple_round_night_shield" iconVisibleSize="24" iconOrder="60" />
         </switch>
     </point>
     <polygon>
@@ -1995,7 +1997,7 @@
                     <case minzoom="19" strokeWidth="10.5:10.5" color="#4D4D4D" />
                     <apply_if additional="service=driveway" color="#252525" />
                     <apply_if additional="foot=yes" color="#5a6854" />
-                    <apply_if additional="foot=designated" color="#5a6854" />
+                    <apply_if additional="foot=designated" color="#7c907c" />
                 </case>
                 <switch>
                     <case tag="highway" value="busway" />
@@ -2109,7 +2111,7 @@
                     <case minzoom="19" strokeWidth="13:13" color="#cc626262" />
                     <apply_if additional="service=driveway" color="#cc252525" />
                     <apply_if additional="foot=yes" color="#cc5a6854" />
-                    <apply_if additional="foot=designated" color="#cc5a6854" />
+                    <apply_if additional="foot=designated" color="#cc7c907c" />
                 </apply>
             </switch>
             <switch hideRoads="true" minzoom="12">
@@ -2130,7 +2132,7 @@
                     <case minzoom="19" strokeWidth="10.5:10.5" color="#994D4D4D" />
                     <apply_if additional="service=driveway" color="#99252525" />
                     <apply_if additional="foot=yes" color="#995a6854" />
-                    <apply_if additional="foot=designated" color="#995a6854" />
+                    <apply_if additional="foot=designated" color="#997c907c" />
                 </apply>
             </switch>
             <switch hideFootways="false">
@@ -2145,7 +2147,7 @@
                             <case minzoom="19" color="#000000" strokeWidth="10.5" color_5="#665555" strokeWidth_5="9" />
                         </apply>
                         <apply_if additional="foot=yes" color_4="#000000" color_5="#5a6854" pathEffect_5="7_1_1_1" />
-                        <apply_if additional="foot=designated" color_4="#000000" color_5="#5a6854" pathEffect_5="7_1_1_1" />
+                        <apply_if additional="foot=designated" color_4="#000000" color_5="#7c907c" pathEffect_5="7_1_1_1" />
                     </case>
                     <switch minzoom="14">
                         <case tag="highway" value="path" pathEffect_5="3_2" />
@@ -2153,13 +2155,15 @@
                         <case tag="highway" value="cycleway" pathEffect_5="3_2" />
                         <case tag="highway" value="bridleway" pathEffect_5="3_2" />
                         <apply>
-                            <case maxzoom="14" color="#000000" strokeWidth="1.7" color_5="#5a6854" strokeWidth_5="1.5" />
-                            <case maxzoom="15" color="#000000" strokeWidth="2.5" color_5="#5a6854" strokeWidth_5="1.7" />
-                            <case maxzoom="16" color="#000000" strokeWidth="4.5" color_5="#5a6854" strokeWidth_5="2.5" />
-                            <case maxzoom="17" color="#000000" strokeWidth="6" color_5="#5a6854" strokeWidth_5="4.5" />
-                            <case maxzoom="18" color="#000000" strokeWidth="9" color_5="#5a6854" strokeWidth_5="6" />
-                            <case minzoom="19" color="#000000" strokeWidth="10.5" color_5="#5a6854" strokeWidth_5="9" />
+                            <case maxzoom="14" color="#000000" strokeWidth="2" color_5="#252525" strokeWidth_5="2" />
+                            <case maxzoom="15" color="#000000" strokeWidth="2.5" color_5="#302C2C" strokeWidth_5="1.7" />
+                            <case maxzoom="16" color="#000000" strokeWidth="4.5" color_5="#3E3636" strokeWidth_5="2.5" />
+                            <case maxzoom="17" color="#000000" strokeWidth="6" color_5="#4C4040" strokeWidth_5="4.5" />
+                            <case maxzoom="18" color="#000000" strokeWidth="9" color_5="#5A4A4A" strokeWidth_5="6" />
+                            <case minzoom="19" color="#000000" strokeWidth="10.5" color_5="#665555" strokeWidth_5="9" />
                         </apply>
+                        <apply_if additional="foot=yes" color_4="#000000" color_5="#5a6854" pathEffect_5="3_2" />
+                        <apply_if additional="foot=designated" color_4="#000000" color_5="#7c907c" pathEffect_5="3_2" />
                     </switch>
                     <switch minzoom="14">
                         <case tag="highway" value="steps" pathEffect_5="2_2" />
@@ -2172,6 +2176,8 @@
                             <case maxzoom="18" color="#000000" strokeWidth="5" color_5="#5a6854" strokeWidth_5="4.3" />
                             <case minzoom="19" color="#000000" strokeWidth="8" color_5="#5a6854" strokeWidth_5="7" />
                         </apply>
+                        <apply_if additional="foot=yes" color_4="#000000" color_5="#5a6854" pathEffect_5="2_2" />
+                        <apply_if additional="foot=designated" color_4="#000000" color_5="#7c907c" pathEffect_5="2_2" />
                     </switch>
                     <switch minzoom="15">
                         <case tag="abandoned:highway" value="track" />

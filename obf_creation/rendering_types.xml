@@ -197,20 +197,21 @@
 	<type tag="motorcycle" value="forestry" minzoom="13" additional="true" poi="false"/>
 	<type tag="motorcycle" value="delivery" minzoom="13" additional="true" poi="false"/>
 	<type tag="motorcycle" value="customers" minzoom="13" additional="true" poi="false"/>
-	<type tag="foot" value="no" minzoom="13" additional="true" poi="false"/>
-	<type tag="foot" value="private" minzoom="13" additional="true" poi="false"/>
+	<type tag="foot" value="no" minzoom="12" additional="true" poi="false"/>
+	<type tag="foot" value="private" minzoom="12" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="foot" from_value="permit" to_tag1="foot" to_value1="private"/>
-	<type tag="foot" value="yes" minzoom="13" additional="true" poi="false"/>
-	<type tag="foot" value="permissive" minzoom="13" additional="true" poi="false"/>
-	<type tag="foot" value="destination" minzoom="13" additional="true" poi="false"/>
+	<type tag="foot" value="yes" minzoom="12" additional="true" poi="false"/>
+	<type tag="foot" value="designated" minzoom="12" additional="true" poi="false"/>
+	<type tag="foot" value="permissive" minzoom="12" additional="true" poi="false"/>
+	<type tag="foot" value="destination" minzoom="12" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="highway" from_value="path" if_tag1="foot" if_value1="designated" if_not_region_name="$france" to_tag1="highway" to_value1="footway"/>
-	<type tag="foot" value="customers" minzoom="13" additional="true" poi="false"/>
-	<type tag="bicycle" value="no" minzoom="13" additional="true" poi="false"/>
-	<type tag="bicycle" value="yes" minzoom="13" additional="true" poi="false"/>
-	<type tag="bicycle" value="private" minzoom="13" additional="true" poi="false"/>
+	<type tag="foot" value="customers" minzoom="12" additional="true" poi="false"/>
+	<type tag="bicycle" value="no" minzoom="12" additional="true" poi="false"/>
+	<type tag="bicycle" value="yes" minzoom="12" additional="true" poi="false"/>
+	<type tag="bicycle" value="private" minzoom="12" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="bicycle" from_value="permit" to_tag1="bicycle" to_value1="private"/>
-	<type tag="bicycle" value="permissive" minzoom="13" additional="true" poi="false"/>
-	<type tag="bicycle" value="destination" minzoom="13" additional="true" poi="false"/>
+	<type tag="bicycle" value="permissive" minzoom="12" additional="true" poi="false"/>
+	<type tag="bicycle" value="destination" minzoom="12" additional="true" poi="false"/>
 	<type tag="bicycle" value="designated" minzoom="12" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="foot" from_value="use_sidepath" if_not_tag1="sidewalk:left" if_not_value1="yes" if_not_tag2="sidewalk:right" if_not_value2="yes" to_tag1="foot" to_value1="no"/>
 	<entity_convert pattern="tag_transform" from_tag="bicycle" from_value="official" to_tag1="bicycle" to_value1="designated" routing="no"/>

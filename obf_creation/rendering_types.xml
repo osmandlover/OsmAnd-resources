@@ -4424,7 +4424,9 @@
 		<entity_convert pattern="tag_transform" from_tag="sport" from_value="stadium" to_tag1="leisure"/>
 		<type tag="leisure" value="horse_riding" minzoom="12" />
 		<type tag="leisure" value="water_park" minzoom="13" order="71" />
-		<type tag="leisure" value="swimming_pool" minzoom="14" />
+		<type tag="leisure" value="swimming_pool" minzoom="11" />
+		<type tag="leisure" value="bathing_area" minzoom="11" />
+		<type tag="leisure" value="swimming_area" minzoom="11" />
 		<entity_convert pattern="tag_transform" from_tag="amenity" from_value="swimming_pool" to_tag1="leisure" to_value1="swimming_pool"/>
 		<entity_convert pattern="tag_transform" from_tag="leisure" from_value="swimming_pool" if_tag1="access" if_value1="private" map="no"/>
 		<entity_convert pattern="tag_transform" from_tag="leisure" from_value="swimming_pool" if_tag1="access" if_value1="no" map="no"/>
@@ -6370,7 +6372,7 @@
 		<entity_convert pattern="tag_transform" from_tag="sport" from_value="football" to_tag1="sport" to_value1="soccer"/>
 		<type tag="sport" value="sumo" minzoom="15" />
 		<type tag="sport" value="surfing" minzoom="15" />
-		<type tag="sport" value="swimming" minzoom="15" />
+		<type tag="sport" value="swimming" minzoom="11" />
 		<entity_convert pattern="tag_transform" from_tag="sport" from_value="swimming" if_tag1="access" if_value1="private"/>
 		<entity_convert pattern="tag_transform" from_tag="sport" from_value="swimming" if_tag1="access" if_value1="no"/>
 		<entity_convert pattern="tag_transform" from_tag="sport" from_value="swimming" if_tag1="leisure" if_value1="sports_centre" to_tag1="sport" to_value1="swimming" to_tag2="leisure" to_value2="swimming_pool" map="no"/>

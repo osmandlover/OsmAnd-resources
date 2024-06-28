@@ -344,6 +344,12 @@
                 <case tag="place" value="island" />
                 <case tag="place" value="islet" />
             </switch>
+            <switch>
+                <case minzoom="12" tag="leisure" value="swimming_pool"/>
+                <case minzoom="15" tag="leisure" value="swimming_area"/>
+                <case minzoom="12" tag="leisure" value="bathing_area"/>
+                <apply color_2="#7479ec" strokeWidth_2="1.3:0"/>
+            </switch>
             <case tag="military" value="danger_area" order="8" />
             <case tag="railway" value="" order="4" />
             <case tag="railway" value="station" order="5" />
@@ -856,7 +862,7 @@
             <case minzoom="16" tag="natural" value="beach" nameTag="" textSize="12" textColor="#eec590" textHaloColor="#88222222" textWrapWidth="20" textOrder="155" />
 >
             <switch textColor="#ffcc9b" textHaloColor="#774d2803" textWrapWidth="25" textHaloRadius="2">
-                <switch minzoom="13" tag="natural" value="peak" textItalic="true" textOrder="80">
+                <switch minzoom="11" tag="natural" value="peak" textItalic="true" textOrder="80">
                     <case maxzoom="13" nameTag="ele" textSize="11" />
                     <case maxzoom="14" nameTag="" nameTag2="ele" textSize="12" />
                     <case maxzoom="14" nameTag="ele" textSize="12" />
@@ -865,7 +871,11 @@
                     <case minzoom="17" nameTag="" nameTag2="ele" textSize="16" />
                     <case minzoom="17" nameTag="ele" textSize="16" />
                 </switch>
-                <case minzoom="13" tag="natural" value="cave_entrance" textSize="12" textOrder="236" />
+                <case minzoom="11" tag="natural" value="cave_entrance" textSize="12" textOrder="236" />
+                <case minzoom="11" tag="leisure" value="swimming_pool" textSize="12" textOrder="236" />
+                <case minzoom="11" tag="leisure" value="swimming_area" textSize="12" textOrder="236" />
+                <case minzoom="11" tag="leisure" value="bathing_area" textSize="12" textOrder="236" />
+
                 <case minzoom="13" tag="natural" value="volcano" textSize="14" textOrder="79" />
                 <apply_if engine_v1="true" textDy="7" />
             </switch>
@@ -1324,6 +1334,9 @@
                 <case minzoom="2" tag="place" value="ocean" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="3" />
                 <case minzoom="5" tag="place" value="sea" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="33" />
                 <case minzoom="13" tag="natural" value="water" nameTag="" textSize="12" textItalic="true" textWrapWidth="20" textOrder="178" />
+                <case minzoom="11" tag="leisure" value="swimming_pool" textWrapWidth="20" textOrder="218" textDy="5" nameTag=""/>
+                <case minzoom="11" tag="leisure" value="swimming_area" textWrapWidth="20" textOrder="218" textDy="5" nameTag=""/>
+                <case minzoom="11" tag="leisure" value="bathing_area" textWrapWidth="20" textOrder="218" textDy="5" nameTag=""/>
                 <case minzoom="8" tag="natural" value="bay" nameTag="" textSize="12" textItalic="true" textWrapWidth="17" textOrder="179" />
                 <case minzoom="14" tag="waterway" value="stream" nameTag="" textSize="12" textOnPath="true" textOrder="206" />
                 <case minzoom="14" tag="waterway" value="wadi" nameTag="" textSize="12" textOnPath="true" textOrder="213" />
@@ -1608,12 +1621,12 @@
                 <case minzoom="16" tag="shop" value="supermarket" icon="shop_supermarket" iconOrder="75" />
                 <case minzoom="16" tag="shop" value="department_store" icon="shop_department_store" iconOrder="75" />
             </switch>
-            <case minzoom="12" tag="natural" value="peak" iconOrder="65">
+            <case minzoom="11" tag="natural" value="peak" iconOrder="65">
                 <case maxzoom="11" icon="natural_peak_night" shield="" iconVisibleSize="25" intersectionSizeFactor="2" />
                 <case maxzoom="14" icon="natural_peak_night" shield="" />
                 <case minzoom="15" icon="natural_peak_night_big" shield="" />
             </case>
-            <case minzoom="10" tag="natural" value="volcano" iconOrder="50">
+            <case minzoom="11" tag="natural" value="volcano" iconOrder="50">
                 <case maxzoom="14" icon="natural_volcano_map" shield="peakvolcano_shield">
                     <case additional="status=active" icon="natural_volcano_active" shield="natural_volcano_active_shield" />
                 </case>
@@ -1621,11 +1634,23 @@
                     <case additional="status=active" icon="natural_volcano_active_big" shield="" />
                 </case>
             </case>
-            <case minzoom="12" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85">
+            <case minzoom="11" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85">
                 <apply shield="gray_round_night_shield" />
             </case>
-            <case minzoom="14" tag="natural" value="spring" icon="natural_spring" shield="blue_round_night_shield" />
-            <case minzoom="12" tag="man_made" value="outfall" icon="communication_tower" shield="purple_round_night_shield" iconVisibleSize="24" iconOrder="60" />
+            <case minzoom="11" tag="sport" value="swimming" icon="sport_swimming" iconOrder="85">
+                <apply shield="green_round_night_shield" />
+            </case>
+            <case minzoom="11" tag="leisure" value="swimming_pool" icon="sport_swimming" iconOrder="40">
+                <apply shield="green_round_night_shield" />
+            </case>
+            <case minzoom="11" tag="leisure" value="swimming_area" icon="sport_swimming" iconOrder="40">
+                <apply shield="green_round_night_shield" />
+            </case>
+            <case minzoom="11" tag="leisure" value="bathing_area" icon="sport_swimming" iconOrder="40">
+                <apply shield="green_round_night_shield" />
+            </case>
+            <case minzoom="11" tag="natural" value="spring" icon="natural_spring" shield="blue_round_night_shield"  iconOrder="100"/>
+            <case minzoom="11" tag="man_made" value="outfall" icon="communication_tower" shield="purple_round_night_shield" iconVisibleSize="24" iconOrder="60" />
         </switch>
     </point>
     <polygon>
